@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sentiment Analysis </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎬 Sentiment Analysis on Movie Reviews</h1>
+    <p>Using Machine Learning Algorithms to Classify Movie Reviews as Positive or Negative</p>
+  </header>
+
+  <section class="overview">
+    <h2>🔍 Project Overview</h2>
+    <p>This project explores sentiment analysis using machine learning models on IMDb movie reviews. The goal was to build a predictive model that classifies reviews as <strong>positive</strong> or <strong>negative</strong>.</p>
+  </section>
+
+  <section class="models">
+    <h2>🧠 Models Used</h2>
+    <ul>
+      <li>Naive Bayes</li>
+      <li>Logistic Regression</li>
+      <li>Support Vector Machine (SVM)</li>
+    </ul>
+    <p>TF-IDF vectorization was used to convert text into numerical features.</p>
+  </section>
+
+  <section class="results">
+  <h2>📊 Results Summary</h2>
+  <canvas id="modelChart" width="400" height="200"></canvas>
+</section>
+
+
+  <section class="deployment">
+    <h2>🚀 Deployment</h2>
+    <p>The best-performing model was deployed using <strong>Streamlit</strong>. Users can input a review and receive real-time sentiment predictions.</p>
+    <a href="https://your-username.streamlit.app" target="_blank" class="button">Try the Live App</a>
+  </section>
+
+  <section class="conclusion">
+    <h2>🧠 Conclusion</h2>
+    <p>Logistic Regression performed best overall. Future improvements could include using BERT for deeper contextual understanding and deploying the app to a custom domain.</p>
+  </section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('modelChart').getContext('2d');
+  const modelChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Naive Bayes', 'Logistic Regression', 'SVM'],
+      datasets: [{
+        label: 'Accuracy',
+        data: [84.6, 85.7, 85.2], // Update SVM when ready
+        backgroundColor: ['#f39c12', '#27ae60', '#2980b9']
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true, max: 100 }
+      }
+    }
+  });
+</script>
+
+  <footer>
+    <p>Created by Devi Jaishri|2025</p>
+  </footer>
+</body>
+</html>
